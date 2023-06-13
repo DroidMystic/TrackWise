@@ -1,28 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lblue"
     android:orientation="vertical"
-    tools:context=".weightActivity">
+    android:background="@color/lblue"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/allergyEditText"
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Allergy" />
+
+    <Button
+        android:id="@+id/addAllergyButton"
+        android:layout_width="wrap_content"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/dblue"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:text="Add Allergy" />
+
+    <Button
+        android:id="@+id/clearAllergiesButton"
+        android:backgroundTint="@color/dblue"
+        android:layout_margin="15dp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear Allergies" />
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Your Allergies"
-        android:layout_margin="15dp"
-        android:textSize="35dp"
-        android:textStyle="bold"
         android:textColor="@color/black"
-        android:gravity="center">
-    </TextView>
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="match_parent"
+        android:textSize="35dp"
+        android:layout_gravity="center"
+        android:text="Allergies" />
+
+    <TextView
+        android:id="@+id/allergyListTextView"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:textSize="18sp" />
 
-        >
-
-    </com.google.android.material.textfield.TextInputEditText>
 </LinearLayout>

@@ -6,6 +6,12 @@
     <string name="target_calories_format">Target Calories: %d</string>
     <string name="result_below_target">Total calories are below the target!</string>
     <string name="result_above_target">Total calories are above the target!</string>
+    <string name="select_start_date">Select Start Date</string>
+    <string name="select_end_date">Select End Date</string>
+    <string name="calculate">Calculate</string>
+    <string name="period_duration">Your cycle duration this month was %d days</string>
+    <string name="symptoms_list">Your symptoms: %s</string>
+    <string name="fertility_date">Your ovulation day is on %s. High chance of pregnancy.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
