@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Weight"
+        android:id="@+id/weight"
+        android:icon="@drawable/weight"/>
+    <item android:title="Periods"
+        android:id="@+id/periods"
+        android:icon="@drawable/periods"/>
+    <item android:title="Food"
+        android:id="@+id/food"
+        android:icon="@drawable/food"/>
+
+    <item android:title="Allergy"
+        android:id="@+id/allergy"
+        android:icon="@drawable/allergy"/>
+</menu>
