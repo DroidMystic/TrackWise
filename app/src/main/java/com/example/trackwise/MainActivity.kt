@@ -1,16 +1,27 @@
 package com.example.trackwise
+import android.app.AlarmManager
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
 
+
 class MainActivity : AppCompatActivity() {
+
+    private  val CHANNEL_ID = "my_channel_id"
+    private  val NOTIFICATION_ID = 1
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var actionBarToggle: ActionBarDrawerToggle
     private lateinit var navView: NavigationView
@@ -18,6 +29,32 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
+        fun showNotification(context: Context, title: String, message: String) {
+            val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+            // Create a notification channel (required for Android 8.0 and higher)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                val channel = NotificationChannel(CHANNEL_ID, "My Channel", NotificationManager.IMPORTANCE_DEFAULT)
+                notificationManager.createNotificationChannel(channel)
+            }
+
+            // Build the notification
+            val notificationBuilder = NotificationCompat.Builder(context, CHANNEL_ID)
+                .setSmallIcon(R.drawable.banner)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setAutoCancel(true)
+
+            // Display the notification
+            notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build())
+        }
+
+        showNotification(this, "TrackWise", "Reminding you to update  your calories  ")
+
 
         // Call findViewById on the DrawerLayout
         drawerLayout = findViewById(R.id.my_drawer_layout)
@@ -63,8 +100,13 @@ class MainActivity : AppCompatActivity() {
                     false
                 }
             }
+
         }
+
+
+
     }
+
     override fun onSupportNavigateUp(): Boolean {
         drawerLayout.openDrawer(navView)
         return true
@@ -78,4 +120,16 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
+
+
+    class ReminderReceiver : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            // Show a notification or perform any desired action here
+            Toast.makeText(context, "Reminder: ${intent.getStringExtra("message")}", Toast.LENGTH_LONG).show()
+        }
+    }
+
+
+
 }
