@@ -3,18 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    android:padding="16dp"
     android:background="@color/lblue"
+    android:padding="16dp"
     tools:context=".ResultsActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total Calories Consumed:"
+        android:text="Results"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -22,17 +21,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:text="Total Calories: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/vitaminsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Vitamins: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/carbsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Carbs: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/mineralsTextView"
+        android:layout_width="wrap_content"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:text="Minerals: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/fatsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Fats: "
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/comparisonResultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:gravity="center"
-        android:layout_marginTop="16dp"
-        android:textSize="18sp" />
+        android:text="Comparison Result"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 </LinearLayout>
-

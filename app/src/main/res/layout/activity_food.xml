@@ -1,103 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/lblue"
-    android:orientation="vertical"
-    tools:context=".weightActivity">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Calorie Tracking"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:gravity="center">
-    </TextView>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Breakfast"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:gravity="center">
-    </TextView>
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:background="@color/lblue"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-    <com.google.android.material.textfield.TextInputEditText
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Breakfast"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/breakfastFoodEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/breakfasthint"
-            android:layout_marginLeft="10dp"
-            android:hint="Enter Food Item"/>
-    <AutoCompleteTextView
+            android:textColorHint="@color/black"
+            android:hint="Food Item" />
+
+        <EditText
+            android:id="@+id/breakfastCaloriesEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/breakfastcalorie"
-            android:layout_marginLeft="10dp"
-            android:hint="Enter Calorie"/>
+            android:hint="Calories"
+            android:textColorHint="@color/black"
+            android:inputType="number"
+            android:enabled="false" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Lunch"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:gravity="center">
-    </TextView>
+        <EditText
+            android:id="@+id/breakfastVitaminsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Vitamins" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/lunchhint"
-        android:layout_marginLeft="10dp"
-        android:hint="Enter Food Item"/>
-    <AutoCompleteTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/lunchcalorie"
-        android:layout_marginLeft="10dp"
-        android:hint="Enter Calorie"/>
+        <EditText
+            android:id="@+id/breakfastCarbsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Carbs" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Dinner"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:gravity="center">
-    </TextView>
+        <EditText
+            android:id="@+id/breakfastMineralsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Minerals" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/dinnerhint"
-        android:layout_marginLeft="10dp"
-        android:hint="Enter Food Item"/>
-    <AutoCompleteTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/dinnercalorie"
-        android:layout_marginLeft="10dp"
-        android:hint="Enter Calorie"/>
+        <EditText
+            android:id="@+id/breakfastFatsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Fats" />
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:id="@+id/resultsButton"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="@color/dblue"
-        android:text="ADD">
-    </com.google.android.material.button.MaterialButton>
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lunch"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/lunchFoodEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Food Item" />
+
+        <EditText
+            android:id="@+id/lunchCaloriesEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Calories"
+            android:textColorHint="@color/black"
+            android:inputType="number"
+            android:enabled="false" />
+
+        <EditText
+            android:id="@+id/lunchVitaminsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Vitamins" />
+
+        <EditText
+            android:id="@+id/lunchCarbsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Carbs" />
+
+        <EditText
+            android:id="@+id/lunchMineralsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Minerals" />
+
+        <EditText
+            android:id="@+id/lunchFatsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Fats" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dinner"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/dinnerFoodEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Food Item" />
+
+        <EditText
+            android:id="@+id/dinnerCaloriesEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Calories"
+            android:inputType="number"
+            android:enabled="false" />
+
+        <EditText
+            android:id="@+id/dinnerVitaminsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Vitamins" />
+
+        <EditText
+            android:id="@+id/dinnerCarbsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Carbs" />
+
+        <EditText
+            android:id="@+id/dinnerMineralsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Minerals" />
+
+        <EditText
+            android:id="@+id/dinnerFatsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Fats" />
+
+        <!-- Calculate button -->
+        <Button
+            android:id="@+id/calculateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/dblue"
+            android:layout_gravity="center"
+            android:text="Calculate" />
+
+    </LinearLayout>
+</ScrollView>

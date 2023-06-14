@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "667448109758",
+    "firebase_url": "https://trackwise-944d7-default-rtdb.firebaseio.com",
+    "project_id": "trackwise-944d7",
+    "storage_bucket": "trackwise-944d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667448109758:android:f6b061f3ecaad8b6410cef",
+        "android_client_info": {
+          "package_name": "com.example.trackwise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667448109758-dmkoajsa4k78n1n9bi07j3tcfuv6u4id.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAah4XQ_TsqfxpU387tfgXJwjZ4y0npr2g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667448109758-dmkoajsa4k78n1n9bi07j3tcfuv6u4id.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
