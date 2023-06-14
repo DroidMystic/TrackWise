@@ -46,7 +46,7 @@ class SignUpActivity : AppCompatActivity() {
         }
         val  signIntext = findViewById<TextView>(R.id.signin)
         signIntext.setOnClickListener {
-            val opensigninactivity = Intent(this,MainActivity::class.java)
+            val opensigninactivity = Intent(this,SignInActivity::class.java)
             startActivity(opensigninactivity)
         }
 
