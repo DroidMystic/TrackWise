@@ -30,6 +30,30 @@ class food : AppCompatActivity() {
             "Paneer Curry" to 160
             // Add more food items and their calorie values as needed
         )
+        val vitaminCalorieMap = mapOf(
+            "Egg" to 80,
+            "Bread" to 100,
+            "Milk" to 120,
+            "Vegetable Biryani" to 350,
+            "Chickpea Curry" to 235,
+            "Palak Paneer" to 260,
+            "Vegetable Curry" to 120,
+            "Raita" to 50,
+            "Paneer Curry" to 160
+            // Add more food items and their calorie values as needed
+        )
+        val carbsCalorieMap = mapOf(
+            "Egg" to 80,
+            "Bread" to 100,
+            "Milk" to 120,
+            "Vegetable Biryani" to 350,
+            "Chickpea Curry" to 235,
+            "Palak Paneer" to 260,
+            "Vegetable Curry" to 120,
+            "Raita" to 50,
+            "Paneer Curry" to 160
+            // Add more food items and their calorie values as needed
+        )
 
         val calculateButton = findViewById<Button>(R.id.calculateButton)
         calculateButton.setOnClickListener {
@@ -126,6 +150,189 @@ class food : AppCompatActivity() {
 
 
 
+        val breakfastFoodWatcher2 = object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                val foodItem = s.toString()
+                val vitamins = vitaminCalorieMap[foodItem]
+                val editTextVitaminBreakfast = findViewById<EditText>(R.id.breakfastVitaminsEditText)
+                editTextVitaminBreakfast.setText(vitamins?.toString() ?: "")
+            }
+        }
+
+        val lunchFoodWatcher2 = object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            @SuppressLint("WrongViewCast")
+            override fun afterTextChanged(s: Editable?) {
+                val foodItem = s.toString()
+                val vitamins = vitaminCalorieMap[foodItem]
+                val editTextVitaminsLunch = findViewById<EditText>(R.id.lunchVitaminsEditText)
+                editTextVitaminsLunch.setText(vitamins?.toString() ?: "")
+            }
+        }
+
+        val dinnerFoodWatcher2 = object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                val foodItem = s.toString()
+                val vitamins = vitaminCalorieMap[foodItem]
+                val editTextVitaminsDinner = findViewById<EditText>(R.id.dinnerVitaminsEditText)
+
+                editTextVitaminsDinner.setText(vitamins?.toString() ?: "")
+            }
+        }
+
+        editTextFoodBreakfast.addTextChangedListener(breakfastFoodWatcher2)
+        editTextFoodLunch.addTextChangedListener(lunchFoodWatcher2)
+        editTextFoodDinner.addTextChangedListener(dinnerFoodWatcher2)
+
+
+
+        val breakfastFoodWatcher3 = object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                val foodItem = s.toString()
+                val vitamins = vitaminCalorieMap[foodItem]
+                val editTextVitaminBreakfast = findViewById<EditText>(R.id.breakfastCarbsEditText)
+                editTextVitaminBreakfast.setText(vitamins?.toString() ?: "")
+            }
+        }
+
+        val lunchFoodWatcher3 = object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            @SuppressLint("WrongViewCast")
+            override fun afterTextChanged(s: Editable?) {
+                val foodItem = s.toString()
+                val carbs = carbsCalorieMap[foodItem]
+                val editTextCarbsLunch = findViewById<EditText>(R.id.lunchCarbsEditText)
+                editTextCarbsLunch.setText(carbs?.toString() ?: "")
+            }
+        }
+
+        val dinnerFoodWatcher3 = object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                val foodItem = s.toString()
+                val carbs = carbsCalorieMap[foodItem]
+                val editTextCarbsDinner = findViewById<EditText>(R.id.dinnerCarbsEditText)
+
+                editTextCarbsDinner.setText(carbs?.toString() ?: "")
+            }
+        }
+
+        editTextFoodBreakfast.addTextChangedListener(breakfastFoodWatcher3)
+        editTextFoodLunch.addTextChangedListener(lunchFoodWatcher3)
+        editTextFoodDinner.addTextChangedListener(dinnerFoodWatcher3)
+
+
+
+        val breakfastFoodWatcher4 = object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                val foodItem = s.toString()
+                val minerals = vitaminCalorieMap[foodItem]
+                val editTextMineralsBreakfast = findViewById<EditText>(R.id.breakfastMineralsEditText)
+                editTextMineralsBreakfast.setText(minerals?.toString() ?: "")
+            }
+        }
+
+        val lunchFoodWatcher4 = object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            @SuppressLint("WrongViewCast")
+            override fun afterTextChanged(s: Editable?) {
+                val foodItem = s.toString()
+                val minerals = carbsCalorieMap[foodItem]
+                val editTextMineralsLunch = findViewById<EditText>(R.id.lunchMineralsEditText)
+                editTextMineralsLunch.setText(minerals?.toString() ?: "")
+            }
+        }
+
+        val dinnerFoodWatcher4 = object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                val foodItem = s.toString()
+                val minerals = carbsCalorieMap[foodItem]
+                val editTextMineralsDinner = findViewById<EditText>(R.id.dinnerMineralsEditText)
+
+                editTextMineralsDinner.setText(minerals?.toString() ?: "")
+            }
+        }
+        editTextFoodBreakfast.addTextChangedListener(breakfastFoodWatcher4)
+        editTextFoodLunch.addTextChangedListener(lunchFoodWatcher4)
+        editTextFoodDinner.addTextChangedListener(dinnerFoodWatcher4)
+
+
+
+        val breakfastFoodWatcher5 = object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                val foodItem = s.toString()
+                val fat = vitaminCalorieMap[foodItem]
+                val editTextFatBreakfast = findViewById<EditText>(R.id.breakfastFatsEditText)
+                editTextFatBreakfast.setText(fat?.toString() ?: "")
+            }
+        }
+
+        val lunchFoodWatcher5 = object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            @SuppressLint("WrongViewCast")
+            override fun afterTextChanged(s: Editable?) {
+                val foodItem = s.toString()
+                val fat = carbsCalorieMap[foodItem]
+                val editTextFatLunch = findViewById<EditText>(R.id.lunchFatsEditText)
+                editTextFatLunch.setText(fat?.toString() ?: "")
+            }
+        }
+
+        val dinnerFoodWatcher5 = object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                val foodItem = s.toString()
+                val fat = carbsCalorieMap[foodItem]
+                val editTextFatDinner = findViewById<EditText>(R.id.dinnerFatsEditText)
+
+                editTextFatDinner.setText(fat?.toString() ?: "")
+            }
+        }
+        editTextFoodBreakfast.addTextChangedListener(breakfastFoodWatcher5)
+        editTextFoodLunch.addTextChangedListener(lunchFoodWatcher5)
+        editTextFoodDinner.addTextChangedListener(dinnerFoodWatcher5)
     }
     private fun calculateTotalCalories(): Int {
         val editTextFoodBreakfast = findViewById<EditText>(R.id.breakfastCaloriesEditText)
@@ -139,7 +346,6 @@ class food : AppCompatActivity() {
     }
 
 }
-
 
 
 
