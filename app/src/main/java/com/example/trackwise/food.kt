@@ -18,6 +18,44 @@ class food : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food)
 
+        val breakfastDecreaseButton = findViewById<Button>(R.id.breakfastDecreaseButton)
+        breakfastDecreaseButton.setOnClickListener {
+            val breakfastQuantityEditText = findViewById<EditText>(R.id.breakfastQuantityEditText)
+            decreaseQuantity(breakfastQuantityEditText)
+        }
+
+        val breakfastIncreaseButton = findViewById<Button>(R.id.breakfastIncreaseButton)
+        breakfastIncreaseButton.setOnClickListener {
+            val breakfastQuantityEditText = findViewById<EditText>(R.id.breakfastQuantityEditText)
+            increaseQuantity(breakfastQuantityEditText)
+        }
+
+        // Quantity buttons for lunch
+        val lunchDecreaseButton = findViewById<Button>(R.id.lunchDecreaseButton)
+        lunchDecreaseButton.setOnClickListener {
+            val lunchQuantityEditText = findViewById<EditText>(R.id.lunchQuantityEditText)
+            decreaseQuantity(lunchQuantityEditText)
+        }
+
+        val lunchIncreaseButton = findViewById<Button>(R.id.lunchIncreaseButton)
+        lunchIncreaseButton.setOnClickListener {
+            val lunchQuantityEditText = findViewById<EditText>(R.id.lunchQuantityEditText)
+            increaseQuantity(lunchQuantityEditText)
+        }
+
+        // Quantity buttons for dinner
+        val dinnerDecreaseButton = findViewById<Button>(R.id.dinnerDecreaseButton)
+        dinnerDecreaseButton.setOnClickListener {
+            val dinnerQuantityEditText = findViewById<EditText>(R.id.dinnerQuantityEditText)
+            decreaseQuantity(dinnerQuantityEditText)
+        }
+
+        val dinnerIncreaseButton = findViewById<Button>(R.id.dinnerIncreaseButton)
+        dinnerIncreaseButton.setOnClickListener {
+            val dinnerQuantityEditText = findViewById<EditText>(R.id.dinnerQuantityEditText)
+            increaseQuantity(dinnerQuantityEditText)
+        }
+
         val foodCalorieMap = mapOf(
             "Egg" to 80,
             "Bread" to 100,
@@ -83,8 +121,28 @@ class food : AppCompatActivity() {
             val dinnerFatsEditText = findViewById<EditText>(R.id.dinnerFatsEditText)
             val dinnerFats = dinnerFatsEditText.text.toString()
 
+
+            val breakfastCaloriesEditText = findViewById<EditText>(R.id.breakfastCaloriesEditText)
+            val breakfastCalories = breakfastCaloriesEditText.text.toString().toIntOrNull() ?: 0
+            val lunchCaloriesEditText = findViewById<EditText>(R.id.lunchCaloriesEditText)
+            val lunchCalories = lunchCaloriesEditText.text.toString().toIntOrNull() ?: 0
+            val dinnerCaloriesEditText = findViewById<EditText>(R.id.dinnerCaloriesEditText)
+            val dinnerCalories = dinnerCaloriesEditText.text.toString().toIntOrNull() ?: 0
+
+            // Adjust total calories based on quantities
+            val breakfastQuantityEditText = findViewById<EditText>(R.id.breakfastQuantityEditText)
+            val breakfastQuantity = breakfastQuantityEditText.text.toString().toIntOrNull() ?: 0
+            val lunchQuantityEditText = findViewById<EditText>(R.id.lunchQuantityEditText)
+            val lunchQuantity = lunchQuantityEditText.text.toString().toIntOrNull() ?: 0
+            val dinnerQuantityEditText = findViewById<EditText>(R.id.dinnerQuantityEditText)
+            val dinnerQuantity = dinnerQuantityEditText.text.toString().toIntOrNull() ?: 0
+            val adjustedCalories = totalCalories +
+                    (breakfastCalories * breakfastQuantity) +
+                    (lunchCalories * lunchQuantity) +
+                    (dinnerCalories * dinnerQuantity)
+
             val intent = Intent(this, ResultsActivity::class.java)
-            intent.putExtra("totalCalories", totalCalories)
+            intent.putExtra("totalCalories", adjustedCalories)
             intent.putExtra("breakfastVitamins", breakfastVitamins)
             intent.putExtra("breakfastCarbs", breakfastCarbs)
             intent.putExtra("breakfastMinerals", breakfastMinerals)
@@ -100,6 +158,7 @@ class food : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         val breakfastFoodWatcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
@@ -112,6 +171,8 @@ class food : AppCompatActivity() {
                 editTextCaloriesBreakfast.setText(calories?.toString() ?: "")
             }
         }
+
+
 
         val lunchFoodWatcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -342,7 +403,20 @@ class food : AppCompatActivity() {
         val editTextFoodDinner = findViewById<EditText>(R.id.dinnerCaloriesEditText)
         val dinnerCalories = editTextFoodDinner.text.toString().toIntOrNull() ?: 0
 
+
         return breakfastCalories + lunchCalories + dinnerCalories
+    }
+
+    private fun decreaseQuantity(quantityEditText: EditText) {
+        val currentQuantity = quantityEditText.text.toString().toIntOrNull() ?: 0
+        if (currentQuantity > 0) {
+            quantityEditText.setText((currentQuantity - 1).toString())
+        }
+    }
+
+    private fun increaseQuantity(quantityEditText: EditText) {
+        val currentQuantity = quantityEditText.text.toString().toIntOrNull() ?: 0
+        quantityEditText.setText((currentQuantity + 1).toString())
     }
 
 }

@@ -26,6 +26,38 @@
             android:textColorHint="@color/black"
             android:hint="Food Item" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/breakfastDecreaseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/dblue"
+                android:text="-" />
+
+            <EditText
+                android:id="@+id/breakfastQuantityEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Quantity"
+                android:textAlignment="center"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/breakfastIncreaseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/dblue"
+                android:text="+" />
+
+        </LinearLayout>
+
         <EditText
             android:id="@+id/breakfastCaloriesEditText"
             android:layout_width="match_parent"
@@ -79,6 +111,39 @@
             android:textColorHint="@color/black"
             android:hint="Food Item" />
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/lunchDecreaseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/dblue"
+                android:text="-" />
+
+            <EditText
+                android:id="@+id/lunchQuantityEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Quantity"
+                android:textAlignment="center"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/lunchIncreaseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/dblue"
+                android:text="+" />
+
+        </LinearLayout>
+
         <EditText
             android:id="@+id/lunchCaloriesEditText"
             android:layout_width="match_parent"
@@ -131,6 +196,39 @@
             android:textColorHint="@color/black"
             android:hint="Food Item" />
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/dinnerDecreaseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/dblue"
+                android:text="-" />
+
+            <EditText
+                android:id="@+id/dinnerQuantityEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Quantity"
+                android:textAlignment="center"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/dinnerIncreaseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/dblue"
+                android:text="+" />
+
+        </LinearLayout>
+
         <EditText
             android:id="@+id/dinnerCaloriesEditText"
             android:layout_width="match_parent"
@@ -179,4 +277,5 @@
             android:text="Calculate" />
 
     </LinearLayout>
+
 </ScrollView>
